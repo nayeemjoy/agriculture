@@ -18,6 +18,10 @@ Route::get('/',function(){
 Route::group(['before' => 'guest'], function(){
 	Route::controller('password', 'RemindersController');
 	Route::get('login', ['as'=>'login','uses' => 'AuthController@login']);
+
+	Route::get('home', ['as'=>'home','uses' => 'PageController@index']);
+	Route::get('details/{id?}', ['as'=>'show','uses' => 'PageController@show']);
+
 	Route::post('login', array('uses' => 'AuthController@doLogin'));
 });
 

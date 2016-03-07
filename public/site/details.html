@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <style type="text/css">
+    .grade:hover{
+      cursor: pointer;
+      color: #f44336;
+    }
+
+    a:link {
+    color: red;
+}
+
+/* visited link */
+a:visited {
+    color: green;
+}
+
+/* mouse over link */
+a:hover {
+    color: red;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+  </style>
+
+</head>
+
+<body>
+
+<!-- Navbar goes here -->
+<header>
+  <nav class="light-green lighten-3">
+    <div class="nav-wrapper">
+      <a href="index.html" class="left"><img src="logo.png" width="150"></a>
+      <ul class="left">
+        <li><a href="index.html"><span style="font-size:130%;">হোম পেজ</span></a></li>
+       <!--<li><a href="#">SIGN IN</a></li> --> 
+      </ul>
+      <a href="#" data-activates="mobile-nav" class="right button-collapse"><i class="mdi-navigation-more-vert"></i></a>
+      <ul class="right">
+        <li><a href="#"><span style="font-size:130%;">লগ ইন</span></a></li>
+       <!--<li><a href="#">SIGN IN</a></li> --> 
+      </ul>
+      <div class="left mysearch col s4 l6">
+        <form>
+          <div class="input-field light-green lighten-5 lighten-1">
+            <input type="search" id="search-field" class="field" requ placeholder="Search Products" maxlength="">
+            <label for="search-field">  <i class="mdi-action-search"></i></label>
+            <i class="mdi-navigation-close close"></i>
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+<!-- 
+  <ul class="side-nav" id="mobile-nav">
+    <li><a href="#">Link 1</a></li>
+    <li><a href="#">Link 2</a></li>
+    <li><a href="#">Link 3</a></li>
+  </ul> -->
+
+</header>
+
+
+  <!-- Page Content goes here -->
+  <div class="section" style="margin:0px;">
+  <!-- Page Layout here -->
+
+  <!-- side content -->
+    <div class="row">
+      
+      <div class="col s12 m3 category">
+        
+         <ul class="collapsible" data-collapsible="accordion">
+          <li>
+            <div class="collapsible-header"><h5>ঢাকা</h5></div>
+            <div class="collapsible-body">
+               <ul style="text-align:center;padding:1em;">
+                 <li style="color:blue;font-size:130%;">
+                    ধান
+                 </li>
+                 <ul>
+                   <li><a href="#">লবণসহিষ্ঞু ধানের নতুন জাত</a></li>
+                   <li><a href="#">সোনার ধান বাংলামতি</a></li>
+                   <li><a href="#">খরাসহিষ্ণু ধান</a></li>
+                   <li><a href="#">বিনাধান-৮</a></li>
+                   <li><a href="#">বিনাধান-৫</a></li>
+                 </ul>
+               </ul>
+               <ul style="text-align:center;padding:1em;">
+                 <li style="color:blue;font-size:130%;">
+                    তেল জাতীয় ফসল
+                 </li>
+                 <ul>
+                   <li><a href="#">তিল</a></li>
+                   <li><a href="#">সরিষা</a></li>
+                   <li><a href="#">সূর্যমুখী </a></li>
+                   <li><a href="#">সয়াবিন</a></li>
+                 </ul>
+               </ul>
+               <ul style="text-align:center;padding:1em;">
+                 <li style="color:blue;font-size:130%;">
+                    শস্য জাতীয় ফসল
+                 </li>
+                 <ul>
+                   <li><a href="#">আখ</a></li>
+                   <li><a href="#">গম</a></li>
+                   <li><a href="#">চিনাবাদাম</a></li>
+                   <li><a href="#">ভুট্টা</a></li>
+                 </ul>
+               </ul>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header"><h5>রাজশাহী</h5></div>
+            <div class="collapsible-body">
+               <ul style="text-align:center;padding:1em;">
+                 <li style="color:blue;font-size:130%;">
+                    ধান
+                 </li>
+                 <ul>
+                   <li><a href="#">লবণসহিষ্ঞু ধানের নতুন জাত</a></li>
+                   <li><a href="#">সোনার ধান বাংলামতি</a></li>
+                   <li><a href="#">খরাসহিষ্ণু ধান</a></li>
+                   <li><a href="#">বিনাধান-৮</a></li>
+                   <li><a href="#">বিনাধান-৫</a></li>
+                 </ul>
+               </ul>
+               <ul style="text-align:center;padding:1em;">
+                 <li style="color:blue;font-size:130%;">
+                    তেল জাতীয় ফসল
+                 </li>
+                 <ul>
+                   <li><a href="#">তিল</a></li>
+                   <li><a href="#">সরিষা</a></li>
+                   <li><a href="#">সূর্যমুখী </a></li>
+                   <li><a href="#">সয়াবিন</a></li>
+                 </ul>
+               </ul>
+               <ul style="text-align:center;padding:1em;">
+                 <li style="color:blue;font-size:130%;">
+                    শস্য জাতীয় ফসল
+                 </li>
+                 <ul>
+                   <li><a href="#">আখ</a></li>
+                   <li><a href="#">গম</a></li>
+                   <li><a href="#">চিনাবাদাম</a></li>
+                   <li><a href="#">ভুট্টা</a></li>
+                 </ul>
+               </ul>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header"><h5>বরিশাল</h5></div>
+            <div class="collapsible-body">
+               <ul style="text-align:center;padding:1em;">
+                 <li style="color:blue;font-size:130%;">
+                    ধান
+                 </li>
+                 <ul>
+                   <li><a href="#">লবণসহিষ্ঞু ধানের নতুন জাত</a></li>
+                   <li><a href="#">সোনার ধান বাংলামতি</a></li>
+                   <li><a href="#">খরাসহিষ্ণু ধান</a></li>
+                   <li><a href="#">বিনাধান-৮</a></li>
+                   <li><a href="#">বিনাধান-৫</a></li>
+                 </ul>
+               </ul>
+               <ul style="text-align:center;padding:1em;">
+                 <li style="color:blue;font-size:130%;">
+                    তেল জাতীয় ফসল
+                 </li>
+                 <ul>
+                   <li><a href="#">তিল</a></li>
+                   <li><a href="#">সরিষা</a></li>
+                   <li><a href="#">সূর্যমুখী </a></li>
+                   <li><a href="#">সয়াবিন</a></li>
+                 </ul>
+               </ul>
+               <ul style="text-align:center;padding:1em;">
+                 <li style="color:blue;font-size:130%;">
+                    শস্য জাতীয় ফসল
+                 </li>
+                 <ul>
+                   <li><a href="#">আখ</a></li>
+                   <li><a href="#">গম</a></li>
+                   <li><a href="#">চিনাবাদাম</a></li>
+                   <li><a href="#">ভুট্টা</a></li>
+                 </ul>
+               </ul>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header"><h5>খুলনা</h5></div>
+            <div class="collapsible-body">
+               <ul style="text-align:center;padding:1em;">
+                 <li style="color:blue;font-size:130%;">
+                    ধান
+                 </li>
+                 <ul>
+                   <li><a href="#">লবণসহিষ্ঞু ধানের নতুন জাত</a></li>
+                   <li><a href="#">সোনার ধান বাংলামতি</a></li>
+                   <li><a href="#">খরাসহিষ্ণু ধান</a></li>
+                   <li><a href="#">বিনাধান-৮</a></li>
+                   <li><a href="#">বিনাধান-৫</a></li>
+                 </ul>
+               </ul>
+               <ul style="text-align:center;padding:1em;">
+                 <li style="color:blue;font-size:130%;">
+                    তেল জাতীয় ফসল
+                 </li>
+                 <ul>
+                   <li><a href="#">তিল</a></li>
+                   <li><a href="#">সরিষা</a></li>
+                   <li><a href="#">সূর্যমুখী </a></li>
+                   <li><a href="#">সয়াবিন</a></li>
+                 </ul>
+               </ul>
+               <ul style="text-align:center;padding:1em;">
+                 <li style="color:blue;font-size:130%;">
+                    শস্য জাতীয় ফসল
+                 </li>
+                 <ul>
+                   <li><a href="#">আখ</a></li>
+                   <li><a href="#">গম</a></li>
+                   <li><a href="#">চিনাবাদাম</a></li>
+                   <li><a href="#">ভুট্টা</a></li>
+                 </ul>
+               </ul>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header"><h5>সিলেট</h5></div>
+            <div class="collapsible-body">
+               <ul style="text-align:center;padding:1em;">
+                 <li style="color:blue;font-size:130%;">
+                    ধান
+                 </li>
+                 <ul>
+                   <li><a href="#">লবণসহিষ্ঞু ধানের নতুন জাত</a></li>
+                   <li><a href="#">সোনার ধান বাংলামতি</a></li>
+                   <li><a href="#">খরাসহিষ্ণু ধান</a></li>
+                   <li><a href="#">বিনাধান-৮</a></li>
+                   <li><a href="#">বিনাধান-৫</a></li>
+                 </ul>
+               </ul>
+               <ul style="text-align:center;padding:1em;">
+                 <li style="color:blue;font-size:130%;">
+                    তেল জাতীয় ফসল
+                 </li>
+                 <ul>
+                   <li><a href="#">তিল</a></li>
+                   <li><a href="#">সরিষা</a></li>
+                   <li><a href="#">সূর্যমুখী </a></li>
+                   <li><a href="#">সয়াবিন</a></li>
+                 </ul>
+               </ul>
+               <ul style="text-align:center;padding:1em;">
+                 <li style="color:blue;font-size:130%;">
+                    শস্য জাতীয় ফসল
+                 </li>
+                 <ul>
+                   <li><a href="#">আখ</a></li>
+                   <li><a href="#">গম</a></li>
+                   <li><a href="#">চিনাবাদাম</a></li>
+                   <li><a href="#">ভুট্টা</a></li>
+                 </ul>
+               </ul>
+            </div>
+          </li>
+        </ul>
+      </div> 
+
+       <!-- view content -->
+
+    <div class="col s12 m9">
+     
+    <!-- end view content -->
+   
+      <div class="card">
+            <div>
+               <div class="card-image">
+              <img src="crop_pic.jpg" height="400px;">
+              <span class="card-title">লবণসহিষ্ঞু ধানের নতুন জাত</span>
+            </div>
+            </div>
+            <div class="card-content">
+              <p>বাংলাদেশ পরমাণু কৃষি গবেষণা ইনস্টিটিউটের বিজ্ঞানীরা দেশের উপকূলীয় লবণাক্ত এলাকায় চাষাবাদের জন্য ধানের দু’টি নতুন জাত উদ্ভাবন করেছেন। জাত দু’টি দেশের খাদ্যনিরাপত্তা অর্জনে গুরুত্বপূর্ণ ভূমিকা রাখবে বলে আশা করা হচ্ছে। ধানের নতুন জাত উদ্ভাবনের প্রধান গবেষক ও বিনা’র প্রধান বৈজ্ঞানিক কর্মকর্তা ড. মির্জা মোফাজ্জল ইসলাম জানান, উদ্ভাবিত জাত দু’টি বোরো মৌসুমে চাষ উপযোগী লবণসহিষ্ঞু ধানের জাত। বিগত দিনে উদ্ভাবিত আমন মৌসুমের জন্য ব্রিধান৪০ ও ব্রিধান৪১ এবং বোরো মৌসুমের জন্য ব্রিধান৪৭-এর লবণসহিষ্ঞুতা অনেক কম। কারণ জমিতে লবণের পরিমাণ বেড়ে গেলে ব্রিধান ৪০, ৪১ ও ৪৭ জাতগুলোর ফলন ব্যাপক মাত্রায় কমে যায়। কিন্তু বিনা উদ্ভাবিত জাত দু’টি অপেক্ষাকৃত বেশি মাত্রার লবণাক্ততা সহ্য করতে পারে এবং ফলনও আশানুরূপ। ৮ন্ধ১০ ডেসি সিমেন/মিটার লবণাক্ত জমিতে হেক্টরপ্রতি ফলন সাড়ে চার থেকে পাঁচ টন এবং স্বাভাবিক জমিতে সাড়ে ছয় থেকে সাত টন পর্যন্ত ফলন পাওয়া যায়। জাত দু’টি আলোক অসংবেদনশীল হওয়ায় বোরো ও আমন উভয় মৌসুমে চাষের উপযোগী। বোরো মৌসুমে ১৩০-১৩৫ দিনে এবং আমন মৌসুমে ১২০-১২৫ দিনে পাকে। জাত দু’টিতে রোগবালাই ও পোকামাকড়ের আক্রমণ অনেক কম হয়। জাত দু’টির পাতার রঙ গাঢ় সবুজ, কাণ্ড, পাতা ও শীষ খুব শক্ত। ঝড়ো বাতাসেও ঢলে পড়ে না। পরিপক্ব অবস্খায় ধানের শীষ ঝরে পড়ে না, পাকা ধানের রঙ স্বাভাবিক সোনালি রঙের।</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+       </div>
+    </div> 
+
+    <!-- end side content  -->
+
+      
+  </div>
+
+  <!-- end page layout -->
+  
+
+            
+
+
+
+
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="js/materialize.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+      // $('.cart').hide();
+      $(".button-collapse").sideNav();
+      $('.modal-trigger').leanModal();
+      $('.collapsible').collapsible({
+        accordion : false 
+      });
+      $('select').material_select();  
+      
+  });
+
+</script>
+
+</body>
+</html>
