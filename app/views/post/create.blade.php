@@ -86,6 +86,9 @@
     <script>
     $(document).on('ready', function() {
         $("#input-4").fileinput({showCaption: false});
+
+     var baseUrl = '{{asset('/')}}';
+
     });
     </script>    
     
