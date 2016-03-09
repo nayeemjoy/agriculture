@@ -83,4 +83,35 @@ class CategoryController extends \BaseController {
 		//
 	}
 
+	public function getSubCategory($id)
+	{
+		try {
+			$category_ids = CategoryMap::whereCategoryId($id)->lists('sub_category_id');
+			$categories = Category::whereIn('id', $category_ids)->get();
+			$data['categories'] = $categories;
+			return $this->response($data);
+
+		} catch (Exception $e) {
+			return $e->getMessage();
+		}
+		
+	}
+
+	public function response($message, $code = 200){
+		$data = [
+			'data' => $message,
+			'code' => $code
+		];
+		return Response::json($data, $code);
+	}
+
+	public function responseError($message = "Something Went Wrong", $code = 400){
+		$data = [
+			'error' => $message,
+			'code' => $code
+		];
+		return Response::json($data, $code);
+	}
+
+	
 }

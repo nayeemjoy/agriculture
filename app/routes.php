@@ -18,10 +18,17 @@ Route::get('/',function(){
 Route::group(['before' => 'guest'], function(){
 	Route::controller('password', 'RemindersController');
 	Route::get('login', ['as'=>'login','uses' => 'AuthController@login']);
+
+	Route::get('home', ['as'=>'home','uses' => 'PageController@index']);
+	
+	Route::get('details/{id?}', ['as'=>'show','uses' => 'PageController@show']);
+
+	Route::get('posts', ['as'=>'posts','uses' => 'PostController@posts']);
+
 	Route::post('login', array('uses' => 'AuthController@doLogin'));
 });
 
-Route::group(array('before' => 'auth'), function()
+Route::group(array('before' => 'auth', 'prefix' => 'admin'), function()
 {
 
 	Route::get('logout', ['as' => 'logout', 'uses' => 'AuthController@logout']);
@@ -29,5 +36,15 @@ Route::group(array('before' => 'auth'), function()
 	Route::get('change-password', array('as' => 'password.change', 'uses' => 'AuthController@changePassword'));
 	Route::post('change-password', array('as' => 'password.doChange', 'uses' => 'AuthController@doChangePassword'));
 
+	Route::get('subcategory/{id}', array('as' => 'subcategory', 'uses' => 'CategoryController@getSubCategory'));
+	
 
+	Route::get('posts',['as'=>'post.index', 'uses'=>'PostController@index']);
+	Route::get('post/create',['as'=>'post.create', 'uses'=>'PostController@create']);
+	Route::post('post/store',['as'=>'post.store', 'uses'=>'PostController@store']);
+	Route::get('post/edit/{id}',['as'=>'post.edit', 'uses'=>'PostController@edit']);
+	Route::put('post/update/{id}',['as'=>'post.update', 'uses'=>'PostController@update']);
+	Route::delete('post/delete/{id}',['as'=>'post.delete', 'uses'=>'PostController@destroy']);
+	// Route::get('cart/checkout/{id}',['as'=>'cart.checkout', 'uses'=>'CartsController@checkout']);
+	
 });

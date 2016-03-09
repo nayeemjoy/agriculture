@@ -10,7 +10,11 @@ class PostController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		$posts = Post::all();
+		
+		return View::make('post.index')
+					->with('posts',$posts)
+					->with('title','Posts');
 	}
 
 	/**
@@ -21,7 +25,8 @@ class PostController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('post.create')
+					->with('title','Create Post');
 	}
 
 	/**
@@ -32,7 +37,38 @@ class PostController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$rules = [
+
+					'title'      => 'required',
+					'description'      => 'required'
+		];
+
+		$data = Input::all();
+
+		$validator = Validator::make($data,$rules);
+
+		if($validator->fails()){
+			return Redirect::back()->withInput()->withErrors($validator);
+		}
+		$img_link = 'uploads/default.jpg';
+		if(Input::hasFile('photo')) {
+			$file = Input::file('photo');
+
+			$destination = public_path().'/uploads/images/';
+			$filename = time().'_'.$file->getClientOriginalName();
+			$file->move($destination, $filename);
+			$img_link = '/uploads/images/'.$filename;
+		}
+		$post = new Post();
+
+		$post->title = $data['title'];
+		$post->description = $data['description'];
+		$post->photo = $img_link;
+		if($post->save()){
+			return Redirect::route('post.index')->with('success',"Post Created Successfully");
+		}else{
+			return Redirect::route('post.index')->with('error',"Something went wrong.Try again");
+		}
 	}
 
 	/**
@@ -56,7 +92,9 @@ class PostController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$post = Post::find($id);
+		return View::make('post.edit')->with('post',$post)
+					->with('title','Edit Post');
 	}
 
 	/**
@@ -68,7 +106,39 @@ class PostController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$rules = [
+
+					'title'      => 'required',
+					'description'      => 'required'
+		];
+
+		$data = Input::all();
+
+		$validator = Validator::make($data,$rules);
+
+		if($validator->fails()){
+			return Redirect::back()->withInput()->withErrors($validator);
+		}
+		$post = Post::find($id);
+		$img_link = $post->photo;
+		if(Input::hasFile('photo')) {
+			$file = Input::file('photo');
+
+			$destination = public_path().'/uploads/images/';
+			$filename = time().'_'.$file->getClientOriginalName();
+			$file->move($destination, $filename);
+			$img_link = '/uploads/images/'.$filename;
+		}
+		
+
+		$post->title = $data['title'];
+		$post->description = $data['description'];
+		$post->photo = $img_link;
+		if($post->save()){
+			return Redirect::route('post.index')->with('success',"Post Updated Successfully");
+		}else{
+			return Redirect::route('post.index')->with('error',"Something went wrong.Try again");
+		}
 	}
 
 	/**
@@ -80,7 +150,35 @@ class PostController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		try{
+			Post::destroy($id);
+
+			return Redirect::route('post.index')->with('success','Post Deleted Successfully.');
+
+		}catch(Exception $ex){
+			
+			return Redirect::route('post.index')->with('error','Something went wrong.Try Again.');
+		}
+	}
+	public function posts()
+	{
+		$posts = Post::orderBy('id', 'desc')->paginate(5);
+
+		return $this->response($posts->toArray());
+	}
+	public function response($message, $code = 200){
+		$data = [
+			'data' => $message,
+			'code' => $code
+		];
+		return Response::json($data, $code);
 	}
 
+	public function responseError($message = "Something Went Wrong", $code = 400){
+		$data = [
+			'error' => $message,
+			'code' => $code
+		];
+		return Response::json($data, $code);
+	}
 }

@@ -15,6 +15,14 @@ class CreateCategoryMapsTable extends Migration {
 		Schema::create('category_maps', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->integer('category_id')->unsigned();
+			$table->integer('sub_category_id')->unsigned();
+
+			$table->foreign('category_id')->references('id')->on('categories')
+                ->onUpdate('cascade')->onDelete('cascade');
+
+            $table->foreign('sub_category_id')->references('id')->on('categories')
+            ->onUpdate('cascade')->onDelete('cascade');
 			$table->timestamps();
 		});
 	}
