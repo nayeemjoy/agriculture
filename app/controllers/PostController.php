@@ -47,7 +47,10 @@ class PostController extends \BaseController {
 		$rules = [
 
 					'title'      => 'required',
-					'description'      => 'required'
+					'description'      => 'required',
+					'photo' => 'required|image',
+					'category_id' => 'required',
+					'sub_category_id' => 'required'
 		];
 
 		$data = Input::all();
@@ -71,6 +74,9 @@ class PostController extends \BaseController {
 		$post->title = $data['title'];
 		$post->description = $data['description'];
 		$post->photo = $img_link;
+		$post->category_id = $data['category_id'];
+		$post->sub_category_id = $data['sub_category_id'];
+
 		if($post->save()){
 			return Redirect::route('post.index')->with('success',"Post Created Successfully");
 		}else{
@@ -100,7 +106,13 @@ class PostController extends \BaseController {
 	public function edit($id)
 	{
 		$post = Post::find($id);
-		return View::make('post.edit')->with('post',$post)
+		$categories = Category::whereIsMain(1)->lists('name','id');
+		$category_ids = CategoryMap::whereCategoryId($post->id)->lists('sub_category_id');
+		$sub_categories = Category::whereIn('id', $category_ids)->lists('name','id');
+		return View::make('post.edit')
+					->with('post',$post)
+					->with('categories',$categories)
+					->with('sub_categories',$sub_categories)
 					->with('title','Edit Post');
 	}
 
@@ -116,7 +128,10 @@ class PostController extends \BaseController {
 		$rules = [
 
 					'title'      => 'required',
-					'description'      => 'required'
+					'description'      => 'required',
+					'photo' => 'image',
+					'category_id' => 'required',
+					'sub_category_id' => 'required'
 		];
 
 		$data = Input::all();
@@ -128,6 +143,7 @@ class PostController extends \BaseController {
 		}
 		$post = Post::find($id);
 		$img_link = $post->photo;
+
 		if(Input::hasFile('photo')) {
 			$file = Input::file('photo');
 
@@ -141,6 +157,9 @@ class PostController extends \BaseController {
 		$post->title = $data['title'];
 		$post->description = $data['description'];
 		$post->photo = $img_link;
+		$post->category_id = $data['category_id'];
+		$post->sub_category_id = $data['sub_category_id'];
+
 		if($post->save()){
 			return Redirect::route('post.index')->with('success',"Post Updated Successfully");
 		}else{

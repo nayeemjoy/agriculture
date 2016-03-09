@@ -10,7 +10,10 @@ class PageController extends \BaseController {
 	 */
 	public function index()
 	{
-		return View::make('home');
+		$categories = $this->getCategories();
+		return View::make('home')
+			->with('title','Agriculture - Home')
+			->with('categories',$categories);
 	}
 
 	/**
@@ -22,6 +25,18 @@ class PageController extends \BaseController {
 	public function create()
 	{
 		//
+	}
+
+
+	public function getCategories()
+	{
+		$category = Category::whereIsMain(1)->get();
+		foreach ($category as $key) {
+			$category_ids = CategoryMap::whereCategoryId($key->id)->lists('sub_category_id');
+			$sub_categories = Category::whereIn('id', $category_ids)->get();
+			$key->sub_categories = $sub_categories;
+		}
+		return $category;
 	}
 
 	/**
@@ -44,7 +59,12 @@ class PageController extends \BaseController {
 	 */
 	public function show($id = 1)
 	{
-		return View::make('details');
+		$post = Post::find($id);
+		$categories = $this->getCategories();
+		return View::make('details')
+		->with('title','Agriculture - Details')
+			->with('categories',$categories)
+			->with('post',$post);
 	}
 
 	/**
