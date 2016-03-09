@@ -126,6 +126,7 @@ return array(
 		/* Uncomment for use in development */
 		'Way\Generators\GeneratorsServiceProvider', // Generators
 		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider', // IDE Helpers
+		'Intervention\Image\ImageServiceProvider',
 
 	),
 
@@ -194,6 +195,7 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 		'Entrust'           => 'Zizaco\Entrust\EntrustFacade',
+		'Image'           => 'Intervention\Image\Facades\Image',
 
 	),
 

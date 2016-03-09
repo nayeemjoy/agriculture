@@ -14,65 +14,23 @@
                   </li>
 
                   {{-- Task Manager --}}
-                  <li>
+                  <!-- <li>
 
                       <a href="#">
                           <i class="fa fa-tasks"></i>
                           <span>Task Manager</span>
                       </a>
-                  </li>
-                  {{-- Carrier Accounts --}}
-                  <li>
-
-                      <a href="#">
-                          <i class="fa fa-plane"></i>
-                          <span>Carrier Accounts</span>
+                  </li> -->
+                  {{-- Post Manager --}}
+                  <li class="sub-menu">
+                      <a href="javascript:;">
+                          <i class="fa fa-tasks"></i>
+                          <span>Post</span>
                       </a>
-                  </li>
-
-                  {{-- Shipments --}}
-                  <li>
-
-                      <a href="#">
-                          <i class="fa fa-truck"></i>
-                          <span>Shipments</span>
-                      </a>
-                  </li>
-
-                  {{-- Customers --}}
-                  <li>
-
-                      <a href="#">
-                          <i class="fa fa-user"></i>
-                          <span>Customers</span>
-                      </a>
-                  </li>
-
-                  {{-- Salespersons --}}
-                  <li>
-
-                      <a href="#">
-                          <i class="fa fa-flash"></i>
-                          <span>Sales persons</span>
-                      </a>
-                  </li>
-
-                  {{-- Staff Users --}}
-                  <li>
-
-                      <a href="#">
-                          <i class="fa fa-users"></i>
-                          <span>Staff Users</span>
-                      </a>
-                  </li>
-
-                  {{-- Roles & Permissions --}}
-                  <li>
-
-                      <a href="#">
-                          <i class="fa fa-gears"></i>
-                          <span>Roles & Permissions</span>
-                      </a>
+                      <ul class="sub">
+                        <li><a href="{{ route('post.create') }}">Create New Post</a></li>   
+                        <li><a href="{{ route('post.index') }}">All Posts</a></li>                    
+                      </ul>
                   </li>
 
 
