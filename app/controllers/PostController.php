@@ -24,8 +24,15 @@ class PostController extends \BaseController {
 	 * @return Response
 	 */
 	public function create()
-	{
+	{	
+		//$category_ids = CategoryMap::whereIsMain(1)->lists('sub_category_id');
+
+		$categories = Category::whereIsMain(1)->lists('name','id');
+		$category_ids = CategoryMap::whereCategoryId(1)->lists('sub_category_id');
+		$sub_categories = Category::whereIn('id', $category_ids)->lists('name','id');
 		return View::make('post.create')
+					->with('categories',$categories)
+					->with('sub_categories',$sub_categories)
 					->with('title','Create Post');
 	}
 

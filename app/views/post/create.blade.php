@@ -38,6 +38,18 @@
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        {{ Form::label('category', 'Category : ', array('class' => 'col-md-2 control-label')) }}
+                        <div class="col-md-4">
+                            {{ Form::select('category', $categories, null, array('class' => 'form-control')) }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        {{ Form::label('', '', array('class' => 'col-md-2 control-label')) }}
+                        <div class="col-md-4">
+                            {{ Form::select('sub-category', $sub_categories, null, array('class' => 'form-control')) }}
+                        </div>
+                    </div>
         
 
                     <div class="form-group">
