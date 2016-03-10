@@ -11,19 +11,18 @@
 |
 */
 
-Route::get('/',function(){
-	return Redirect::route('dashboard');
-});
+
+Route::get('/', ['as'=>'home','uses' => 'PageController@index']);
+Route::get('details/{id?}', ['as'=>'show','uses' => 'PageController@show']);
+Route::get('posts', ['as'=>'posts','uses' => 'PostController@posts']);
+
+
 
 Route::group(['before' => 'guest'], function(){
 	Route::controller('password', 'RemindersController');
 	Route::get('login', ['as'=>'login','uses' => 'AuthController@login']);
 
-	Route::get('home', ['as'=>'home','uses' => 'PageController@index']);
 	
-	Route::get('details/{id?}', ['as'=>'show','uses' => 'PageController@show']);
-
-	Route::get('posts', ['as'=>'posts','uses' => 'PostController@posts']);
 
 	Route::post('login', array('uses' => 'AuthController@doLogin'));
 });

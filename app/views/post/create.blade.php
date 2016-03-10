@@ -41,13 +41,13 @@
                     <div class="form-group">
                         {{ Form::label('category', 'Category : ', array('class' => 'col-md-2 control-label')) }}
                         <div class="col-md-4">
-                            {{ Form::select('category', $categories, null, array('class' => 'form-control')) }}
+                            {{ Form::select('category_id', $categories, null, array('class' => 'form-control')) }}
                         </div>
                     </div>
                     <div class="form-group">
                         {{ Form::label('', '', array('class' => 'col-md-2 control-label')) }}
                         <div class="col-md-4">
-                            {{ Form::select('sub-category', $sub_categories, null, array('class' => 'form-control')) }}
+                            {{ Form::select('sub_category_id', $sub_categories, null, array('class' => 'form-control')) }}
                         </div>
                     </div>
         
@@ -78,7 +78,6 @@
     {{ HTML::script('rename/js/plugins/canvas-to-blob.min.js') }}
     {{ HTML::script('rename/js/fileinput_locale_<lang>.js') }}
     {{ HTML::script('rename/js/fileinput.min.js') }}
-    {{ HTML::script('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js') }}
 
    
     <!-- image drag&drop and upload plugin  -->
