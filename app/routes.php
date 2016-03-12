@@ -15,6 +15,8 @@
 Route::get('/', ['as'=>'home','uses' => 'PageController@index']);
 Route::get('details/{id?}', ['as'=>'show','uses' => 'PageController@show']);
 Route::get('posts', ['as'=>'posts','uses' => 'PostController@posts']);
+Route::get('search/category/{category_id}/{sub_category_id}', ['as'=>'search.category','uses' => 'PostController@searchCategory']);
+Route::get('search/keyword/{keyword}', ['as'=>'search.keyword','uses' => 'PostController@searchKeyword']);
 
 
 

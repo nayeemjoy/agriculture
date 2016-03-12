@@ -186,12 +186,47 @@ class PostController extends \BaseController {
 			return Redirect::route('post.index')->with('error','Something went wrong.Try Again.');
 		}
 	}
+
+
 	public function posts()
 	{
 		$posts = Post::orderBy('id', 'desc')->paginate(5);
 
 		return $this->response($posts->toArray());
 	}
+
+
+	public function searchCategory($category_id = 0, $sub_category_id = 0)
+	{
+		// return 'cat';
+		$per_page = 5;
+		if($category_id == 0 && $sub_category_id == 0){
+			
+			$posts = Post::orderBy('id', 'desc')->paginate($per_page);
+
+		}
+		elseif($sub_category_id == 0){
+			$posts = Post::whereCategoryId($category_id)->orderBy('id', 'desc')->paginate($per_page);
+		}
+		else{
+			$posts = Post::whereSubCategoryId($sub_category_id)->orderBy('id', 'desc')->paginate($per_page);
+
+		}
+
+		return $this->response($posts->toArray());
+	}
+
+
+	public function searchKeyword($keyword)
+	{
+		// return 'key';
+		$per_page = 5;
+		$posts = Post::where('title', 'like', '%'.$keyword.'%')->orderBy('id', 'desc')->paginate($per_page);
+
+		return $this->response($posts->toArray());
+	}
+	
+
 	public function response($message, $code = 200){
 		$data = [
 			'data' => $message,
