@@ -52,8 +52,8 @@
 
 
 @include('site.includes.footer')
-
 @yield('script')
+
 
 </body>
 </html>
