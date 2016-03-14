@@ -15,24 +15,7 @@
       color: #f44336;
     }
 
-    a:link {
-        color: red;
-    }
-
-    /* visited link */
-    a:visited {
-        color: green;
-    }
-
-    /* mouse over link */
-    a:hover {
-        color: red;
-    }
-
-    /* selected link */
-    a:active {
-        color: blue;
-    }
+    
   </style>
 
 </head>
