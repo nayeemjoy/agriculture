@@ -17,5 +17,9 @@
 
     
   </style>
+  <script type="text/javascript">
+    var baseUrl = '{{asset('/')}}';
+    var updateAbleUrl = null;
+  </script>
 
 </head>
