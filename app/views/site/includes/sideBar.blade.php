@@ -1,60 +1,26 @@
 <div class="col s12 m3 category">
         
-        <ul class="collapsible" data-collapsible="accordion">
-          <li>
-            <div class="collapsible-header center">First</div>
-              <div class="collapsible-body">
-                <ul class="collapsible" data-collapsible="accordion">
-                  <li>
-                    <div class="collapsible-header center">First</div>
-                    <div class="collapsible-body">
 
-                      <div class="collection">
-                        <a href="#!" class="collection-item">Alvin</a>
-                        <a href="#!" class="collection-item active">Alvin</a>
-                        <a href="#!" class="collection-item">Alvin</a>
-                        <a href="#!" class="collection-item">Alvin</a>
-                      </div>
-            
-                    </div>
-                  </li>
-                  <li>
-                    <div class="collapsible-header center">Second</div>
-                    <div class="collapsible-body">
 
-                      <div class="collection">
-                        <a href="#!" class="collection-item">Alvin</a>
-                        <a href="#!" class="collection-item active">Alvin</a>
-                        <a href="#!" class="collection-item">Alvin</a>
-                        <a href="#!" class="collection-item">Alvin</a>
-                      </div>
-            
-                    </div>
-                  </li>
-                  <li>
-                    <div class="collapsible-header center">Third</div>
-                    <div class="collapsible-body">
-                        <div class="collection">
-                        <a href="#!" class="collection-item">Alvin</a>
-                        <a href="#!" class="collection-item active">Alvin</a>
-                        <a href="#!" class="collection-item">Alvin</a>
-                        <a href="#!" class="collection-item">Alvin</a>
-                      </div>
-                    </div>
-                  </li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <div class="collapsible-header center">Second</div>
-            <div class="collapsible-body">
-            </div>
-          </li>
-          <li>
-            <div class="collapsible-header center">Third</div>
-            <div class="collapsible-body">
-            </div>
-          </li>
-      </ul>
+               
+                
+
+  <ul class="collapsible" data-collapsible="accordion">
+    @foreach($categories as $category)
+    <li>   
+      <div class="collapsible-header">{{$category->name}}</div>
+      <div class="collapsible-body">
+          <div class="collection">
+              @foreach($category->sub_categories as $sub_category)
+                 <a data-catId="{{$category->id}}" data-subId = "{{$sub_category->id}}" href="" class="collection-item categoryId">{{$sub_category->name}}</a>
+              @endforeach
+          </div>
+      </div>     
+    </li>
+   @endforeach
+    
+  </ul>
+
+        
 
 </div>
