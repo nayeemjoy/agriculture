@@ -48,13 +48,13 @@
                      <div class="form-group">
                         {{ Form::label('category', 'Category : ', array('class' => 'col-md-2 control-label')) }}
                         <div class="col-md-4">
-                            {{ Form::select('category_id', $categories, null, array('class' => 'form-control')) }}
+                            {{ Form::select('category_id', $categories, null, array('class' => 'form-control', 'id'=>'category')) }}
                         </div>
                     </div>
                     <div class="form-group">
                         {{ Form::label('', '', array('class' => 'col-md-2 control-label')) }}
                         <div class="col-md-4">
-                            {{ Form::select('sub_category_id', $sub_categories, null, array('class' => 'form-control')) }}
+                            {{ Form::select('sub_category_id', $sub_categories, null, array('class' => 'form-control', 'id'=>'subcategory')) }}
                         </div>
                     </div>
                     
