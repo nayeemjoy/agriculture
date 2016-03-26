@@ -14,6 +14,12 @@
     <div class="search-category">
       <div class="row">
         <div class="col m3">
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="{{asset('img/card/head.jpg')}}">
+            </div>
+          </div>
+           
         </div>
         <div class="col m9">
             <h5>কৃষি</h5>

@@ -14,7 +14,10 @@
       cursor: pointer;
       color: #f44336;
     }
-
+    .teal{
+      color: #E6E6E6;
+      font-size: 20px;
+    }
     body{
         background-color: gainsboro;
     }

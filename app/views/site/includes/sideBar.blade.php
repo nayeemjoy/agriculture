@@ -6,6 +6,9 @@
                 
 
   <ul class="collapsible" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header teal" align="center">প্রকারভেদ</div>     
+    </li>
     @foreach($categories as $category)
     <li>   
       <div class="collapsible-header">{{$category->name}}</div>
