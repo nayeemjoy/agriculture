@@ -21,6 +21,54 @@
   	{{ HTML::script('js/common-scripts.js') }}
   	@yield('script')
   	{{ HTML::script('js/custom.js') }}
+    <script type="text/javascript">
+      var baseUrl = '{{asset('/')}}';
+      $(document).on('ready', function() {
+        
+$('#category').on('change',function(){
+
+          var category_id = $(this).val();
+
+
+          $.ajax({
+
+              method: "GET",
+              url: (baseUrl+"admin/subcategory/"+category_id),
+              dataType  : 'json',
+              success: function(response){
+
+                console.log(response);
+                
+                if(response.code==200){
+                    var items="";
+
+                    $('#subcategory').empty();
+                    $.each( response.data.categories, function( i , obj ) {
+                        $('<option value='+obj.id+'>'+obj.name+'</option>').appendTo('#subcategory');
+                   });
+
+                    
+                    
+                }
+               
+
+
+
+                
+              },
+              error: function(){
+                 console.log("sorry you request cannot be processed");
+              }
+
+            });
+      });
+     
+
+      
+
+    });
+      
+    </script>
 
     
 

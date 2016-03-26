@@ -15,24 +15,15 @@
       color: #f44336;
     }
 
-    a:link {
-        color: red;
+    body{
+        background-color: gainsboro;
     }
 
-    /* visited link */
-    a:visited {
-        color: green;
-    }
-
-    /* mouse over link */
-    a:hover {
-        color: red;
-    }
-
-    /* selected link */
-    a:active {
-        color: blue;
-    }
+    
   </style>
+  <script type="text/javascript">
+    var baseUrl = '{{asset('/')}}';
+    var updateAbleUrl = null;
+  </script>
 
 </head>

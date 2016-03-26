@@ -37,7 +37,7 @@ class AuthController extends \BaseController {
 
 			if (Auth::attempt($credentials))
 			{
-				return Redirect::intended('dashboard');
+				return Redirect::route('dashboard');
 			} else
 			{
 				return Redirect::route('login')
@@ -49,7 +49,7 @@ class AuthController extends \BaseController {
 
 	public function logout(){
 		Auth::logout();
-		return Redirect::route('login')
+		return Redirect::route('home')
 					->with('success',"You are successfully logged out.");
 	}
 

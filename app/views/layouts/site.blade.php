@@ -2,6 +2,7 @@
 <html lang="en">
 @include('site.includes.header')
 
+
 <body>
 
 @include('site.includes.topMenu')
@@ -52,8 +53,8 @@
 
 
 @include('site.includes.footer')
-
 @yield('script')
+
 
 </body>
 </html>

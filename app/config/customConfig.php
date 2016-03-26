@@ -2,7 +2,7 @@
 
 return [
 	'names' =>[
-		'siteName' => 'Template'
+		'siteName' => 'Agriculture'
 	],
 	'roles' =>[
 		'admin' => 'admin'
