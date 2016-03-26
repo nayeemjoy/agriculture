@@ -15,6 +15,10 @@
       color: #f44336;
     }
 
+    body{
+        background-color: gainsboro;
+    }
+
     
   </style>
   <script type="text/javascript">

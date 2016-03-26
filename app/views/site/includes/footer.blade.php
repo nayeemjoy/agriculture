@@ -127,6 +127,19 @@
           
       });
 
+      $('#keywordSearch').submit(function(e){
+
+          e.preventDefault();
+          
+          var keyword = $('#search-field').val();
+
+          var keyword_search_Url = (baseUrl+"search/keyword/"+keyword);
+
+          ajax_call(keyword_search_Url);
+          updateAbleUrl = keyword_search_Url+"?page=";
+          
+      });
+
       function ajax_call(currentUrl){
 
           $.ajax({

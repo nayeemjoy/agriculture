@@ -7,9 +7,9 @@
 
                   <li>
 
-                      <a href="{{ URL::route('dashboard') }}">
+                      <a href="{{ URL::to('/') }}">
                           <i class="fa fa-dashboard"></i>
-                          <span>Dashboard</span>
+                          <span>View Site</span>
                       </a>
                   </li>
 

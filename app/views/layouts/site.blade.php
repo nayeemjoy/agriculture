@@ -2,6 +2,7 @@
 <html lang="en">
 @include('site.includes.header')
 
+
 <body>
 
 @include('site.includes.topMenu')
