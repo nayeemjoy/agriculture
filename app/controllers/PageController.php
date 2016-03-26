@@ -34,6 +34,9 @@ class PageController extends \BaseController {
 		foreach ($category as $key) {
 			$category_ids = CategoryMap::whereCategoryId($key->id)->lists('sub_category_id');
 			$sub_categories = Category::whereIn('id', $category_ids)->get();
+			foreach ($sub_categories as $sub_categorie) {
+				$sub_categorie->total = Post::whereSubCategoryId($sub_categorie->id)->get()->count();
+			}
 			$key->sub_categories = $sub_categories;
 		}
 		return $category;

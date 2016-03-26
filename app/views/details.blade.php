@@ -12,7 +12,7 @@
               <p>{{$post->description}}</p>
             </div>
             <div class="card-action">
-              <a href="#">This is a link</a>
+              <a href="#">Uploaded Date : {{$post->created_at}}</a>
             </div>
        </div>
         </div>
