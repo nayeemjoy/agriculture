@@ -2,7 +2,7 @@
 <header>
   <nav class="light-green lighten-3">
     <div class="nav-wrapper">
-      <a href="#" class="left"><img src="{{asset('img/logo.png')}}" width="150"></a>
+      <a href="#" class="left"><img src="{{asset('img/logo.png')}}"></a>
       <a href="#" data-activates="mobile-nav" class="right button-collapse"><i class="mdi-navigation-more-vert"></i></a>
       <ul class="right">
         @if(!Auth::check())
